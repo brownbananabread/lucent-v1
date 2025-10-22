@@ -1,0 +1,73 @@
+services:
+  database:
+    image: pgvector/pgvector:pg17
+    container_name: lucent-db
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  seed:
+    build: ./seed
+    container_name: lucent-seed
+    environment:
+      - DB_HOST=lucent-db
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+    depends_on:
+      database:
+        condition: service_healthy
+    command: ["python", "main.py"]
+
+  server:
+    build: ./server
+    container_name: lucent-api
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - DB_HOST=lucent-db
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+    ports:
+      - "${SERVER_PORT}:5174"
+    depends_on:
+      database:
+        condition: service_healthy
+
+  client:
+    build:
+      context: ./client
+      args:
+        - VITE_GOOGLE_MAPS_API_KEY=${GOOGLE_MAPS_API_KEY}
+        - VITE_API_URL=http://lucent-api:${SERVER_PORT}
+    container_name: lucent-web
+    environment:
+      - VITE_API_URL=http://lucent-api:${SERVER_PORT}
+    ports:
+      - "${CLIENT_PORT}:5173"
+    depends_on:
+      - server

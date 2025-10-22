@@ -1,0 +1,902 @@
+[
+  {
+    "latitude": -0.5689,
+    "longitude": -69.7082,
+    "country": "Brazil",
+    "state": "Goias",
+    "name": "Summit-East-1",
+    "description": "Underground mine site producing Rare Earth Elements. Established 1959.",
+    "commodities": "Rare Earth Elements"
+  },
+  {
+    "latitude": 37.0739,
+    "longitude": -109.153,
+    "country": "USA",
+    "state": "Alaska",
+    "name": "Peak-Central-2",
+    "description": "Mountain Top Removal mine site producing Palladium, Lithium, Nickel. Established 2001.",
+    "commodities": "Palladium, Lithium, Nickel"
+  },
+  {
+    "latitude": 66.3649,
+    "longitude": -141.2243,
+    "country": "USA",
+    "state": "Montana",
+    "name": "Summit-East-3",
+    "description": "Strip mine site producing Lithium, Gold, Palladium. Established 1981.",
+    "commodities": "Lithium, Gold, Palladium"
+  },
+  {
+    "latitude": 42.3347,
+    "longitude": 75.9838,
+    "country": "China",
+    "state": "Inner Mongolia",
+    "name": "Mountain-South-4",
+    "description": "In-Situ Leaching mine site producing Diamonds. Established 1958.",
+    "commodities": "Diamonds"
+  },
+  {
+    "latitude": 20.7399,
+    "longitude": 94.5948,
+    "country": "China",
+    "state": "Yunnan",
+    "name": "Summit-South-5",
+    "description": "Solution Mining mine site producing Lithium, Cobalt, Diamonds. Established 1961.",
+    "commodities": "Lithium, Cobalt, Diamonds"
+  },
+  {
+    "latitude": 65.2153,
+    "longitude": -74.7128,
+    "country": "USA",
+    "state": "Nevada",
+    "name": "Canyon-East-6",
+    "description": "Solution Mining mine site producing Bauxite, Coal. Established 1969.",
+    "commodities": "Bauxite, Coal"
+  },
+  {
+    "latitude": -25.2543,
+    "longitude": -69.235,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Valley-North-7",
+    "description": "Underground mine site producing Copper, Cobalt. Established 1963.",
+    "commodities": "Copper, Cobalt"
+  },
+  {
+    "latitude": -28.2186,
+    "longitude": 137.0314,
+    "country": "Australia",
+    "state": "New South Wales",
+    "name": "Valley-East-8",
+    "description": "Dredging mine site producing Copper, Platinum. Established 1981.",
+    "commodities": "Copper, Platinum"
+  },
+  {
+    "latitude": 26.688,
+    "longitude": -123.7964,
+    "country": "USA",
+    "state": "Alaska",
+    "name": "Canyon-South-9",
+    "description": "Underground mine site producing Coal. Established 1950.",
+    "commodities": "Coal"
+  },
+  {
+    "latitude": -36.9609,
+    "longitude": 137.338,
+    "country": "Australia",
+    "state": "Queensland",
+    "name": "Summit-West-10",
+    "description": "Strip mine site producing Molybdenum, Bauxite. Established 1954.",
+    "commodities": "Molybdenum, Bauxite"
+  },
+  {
+    "latitude": 36.0477,
+    "longitude": 75.1107,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Summit-South-11",
+    "description": "In-Situ Leaching mine site producing Lithium, Iron Ore. Established 1977.",
+    "commodities": "Lithium, Iron Ore"
+  },
+  {
+    "latitude": 48.2456,
+    "longitude": 133.2662,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Canyon-North-12",
+    "description": "Solution Mining mine site producing Platinum, Tin. Established 1975.",
+    "commodities": "Platinum, Tin"
+  },
+  {
+    "latitude": 59.7993,
+    "longitude": -63.8409,
+    "country": "Canada",
+    "state": "Saskatchewan",
+    "name": "Mountain-East-13",
+    "description": "Open Pit mine site producing Coal, Zinc. Established 1968.",
+    "commodities": "Coal, Zinc"
+  },
+  {
+    "latitude": -29.7431,
+    "longitude": 29.8668,
+    "country": "South Africa",
+    "state": "North West",
+    "name": "Ridge-West-14",
+    "description": "Placer mine site producing Rare Earth Elements, Platinum, Lithium. Established 2015.",
+    "commodities": "Rare Earth Elements, Platinum, Lithium"
+  },
+  {
+    "latitude": -40.1083,
+    "longitude": -69.2308,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Valley-South-15",
+    "description": "Mountain Top Removal mine site producing Iron Ore, Nickel. Established 1982.",
+    "commodities": "Iron Ore, Nickel"
+  },
+  {
+    "latitude": 36.1259,
+    "longitude": -160.8962,
+    "country": "USA",
+    "state": "California",
+    "name": "Ridge-North-16",
+    "description": "Dredging mine site producing Lithium, Silver, Molybdenum. Established 1974.",
+    "commodities": "Lithium, Silver, Molybdenum"
+  },
+  {
+    "latitude": -22.7969,
+    "longitude": -35.0382,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Peak-South-17",
+    "description": "In-Situ Leaching mine site producing Copper. Established 1950.",
+    "commodities": "Copper"
+  },
+  {
+    "latitude": 27.5489,
+    "longitude": -103.1687,
+    "country": "USA",
+    "state": "California",
+    "name": "Summit-Central-18",
+    "description": "In-Situ Leaching mine site producing Nickel, Molybdenum. Established 2019.",
+    "commodities": "Nickel, Molybdenum"
+  },
+  {
+    "latitude": -33.6939,
+    "longitude": 31.2331,
+    "country": "South Africa",
+    "state": "Gauteng",
+    "name": "Peak-East-19",
+    "description": "Solution Mining mine site producing Palladium, Copper, Tin. Established 2004.",
+    "commodities": "Palladium, Copper, Tin"
+  },
+  {
+    "latitude": -11.5722,
+    "longitude": 151.499,
+    "country": "Australia",
+    "state": "Victoria",
+    "name": "Valley-South-20",
+    "description": "Solution Mining mine site producing Copper, Zinc. Established 1975.",
+    "commodities": "Copper, Zinc"
+  },
+  {
+    "latitude": -1.2396,
+    "longitude": -40.606,
+    "country": "Brazil",
+    "state": "Para",
+    "name": "Mountain-Central-21",
+    "description": "Placer mine site producing Copper, Iron Ore, Tungsten. Established 1987.",
+    "commodities": "Copper, Iron Ore, Tungsten"
+  },
+  {
+    "latitude": -44.0493,
+    "longitude": 152.6498,
+    "country": "Australia",
+    "state": "South Australia",
+    "name": "Valley-South-22",
+    "description": "Underground mine site producing Zinc, Diamonds, Platinum. Established 2003.",
+    "commodities": "Zinc, Diamonds, Platinum"
+  },
+  {
+    "latitude": 67.5778,
+    "longitude": -137.8086,
+    "country": "USA",
+    "state": "Nevada",
+    "name": "Mountain-North-23",
+    "description": "Strip mine site producing Coal, Rare Earth Elements, Zinc. Established 1978.",
+    "commodities": "Coal, Rare Earth Elements, Zinc"
+  },
+  {
+    "latitude": -19.7333,
+    "longitude": -38.0032,
+    "country": "Brazil",
+    "state": "Minas Gerais",
+    "name": "Valley-Central-24",
+    "description": "Mountain Top Removal mine site producing Iron Ore, Rare Earth Elements, Silver. Established 1953.",
+    "commodities": "Iron Ore, Rare Earth Elements, Silver"
+  },
+  {
+    "latitude": 59.1027,
+    "longitude": -81.1305,
+    "country": "Canada",
+    "state": "Saskatchewan",
+    "name": "Mountain-South-25",
+    "description": "Solution Mining mine site producing Rare Earth Elements. Established 1975.",
+    "commodities": "Rare Earth Elements"
+  },
+  {
+    "latitude": 22.0258,
+    "longitude": 133.6996,
+    "country": "China",
+    "state": "Inner Mongolia",
+    "name": "Mountain-North-26",
+    "description": "Solution Mining mine site producing Bauxite, Lithium, Coal. Established 2017.",
+    "commodities": "Bauxite, Lithium, Coal"
+  },
+  {
+    "latitude": 52.7047,
+    "longitude": -139.141,
+    "country": "Canada",
+    "state": "Quebec",
+    "name": "Valley-North-27",
+    "description": "Mountain Top Removal mine site producing Nickel, Coal, Lithium. Established 1993.",
+    "commodities": "Nickel, Coal, Lithium"
+  },
+  {
+    "latitude": -29.3002,
+    "longitude": -72.5488,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Mountain-South-28",
+    "description": "In-Situ Leaching mine site producing Iron Ore, Silver, Lithium. Established 1998.",
+    "commodities": "Iron Ore, Silver, Lithium"
+  },
+  {
+    "latitude": -14.1403,
+    "longitude": -75.2493,
+    "country": "Peru",
+    "state": "Ancash",
+    "name": "Valley-East-29",
+    "description": "In-Situ Leaching mine site producing Nickel, Tin, Bauxite. Established 1986.",
+    "commodities": "Nickel, Tin, Bauxite"
+  },
+  {
+    "latitude": 59.4818,
+    "longitude": -67.205,
+    "country": "Canada",
+    "state": "Alberta",
+    "name": "Canyon-Central-30",
+    "description": "Solution Mining mine site producing Iron Ore. Established 2018.",
+    "commodities": "Iron Ore"
+  },
+  {
+    "latitude": -24.1131,
+    "longitude": -76.7009,
+    "country": "Chile",
+    "state": "Coquimbo",
+    "name": "Mountain-West-31",
+    "description": "Solution Mining mine site producing Coal, Zinc. Established 1999.",
+    "commodities": "Coal, Zinc"
+  },
+  {
+    "latitude": 45.514,
+    "longitude": -143.827,
+    "country": "USA",
+    "state": "California",
+    "name": "Mountain-South-32",
+    "description": "In-Situ Leaching mine site producing Platinum, Bauxite, Tin. Established 1997.",
+    "commodities": "Platinum, Bauxite, Tin"
+  },
+  {
+    "latitude": 50.6423,
+    "longitude": -150.0883,
+    "country": "USA",
+    "state": "Montana",
+    "name": "Canyon-West-33",
+    "description": "Solution Mining mine site producing Copper, Silver. Established 1986.",
+    "commodities": "Copper, Silver"
+  },
+  {
+    "latitude": -31.8363,
+    "longitude": 24.2302,
+    "country": "South Africa",
+    "state": "Limpopo",
+    "name": "Mountain-East-34",
+    "description": "Mountain Top Removal mine site producing Platinum, Diamonds, Gold. Established 1980.",
+    "commodities": "Platinum, Diamonds, Gold"
+  },
+  {
+    "latitude": -23.336,
+    "longitude": 136.2126,
+    "country": "Australia",
+    "state": "Western Australia",
+    "name": "Canyon-South-35",
+    "description": "In-Situ Leaching mine site producing Nickel, Zinc. Established 1966.",
+    "commodities": "Nickel, Zinc"
+  },
+  {
+    "latitude": -19.4842,
+    "longitude": 121.0714,
+    "country": "Australia",
+    "state": "Western Australia",
+    "name": "Mountain-Central-36",
+    "description": "Mountain Top Removal mine site producing Lithium, Gold, Molybdenum. Established 2014.",
+    "commodities": "Lithium, Gold, Molybdenum"
+  },
+  {
+    "latitude": 32.6258,
+    "longitude": 74.7765,
+    "country": "China",
+    "state": "Yunnan",
+    "name": "Valley-West-37",
+    "description": "Strip mine site producing Palladium, Tin. Established 1970.",
+    "commodities": "Palladium, Tin"
+  },
+  {
+    "latitude": 42.9803,
+    "longitude": 88.8508,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Peak-East-38",
+    "description": "Strip mine site producing Platinum, Molybdenum. Established 2002.",
+    "commodities": "Platinum, Molybdenum"
+  },
+  {
+    "latitude": -24.1049,
+    "longitude": -49.9192,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Canyon-West-39",
+    "description": "Solution Mining mine site producing Coal, Bauxite, Copper. Established 1973.",
+    "commodities": "Coal, Bauxite, Copper"
+  },
+  {
+    "latitude": -35.1368,
+    "longitude": -73.2297,
+    "country": "Chile",
+    "state": "Atacama",
+    "name": "Canyon-South-40",
+    "description": "Placer mine site producing Tungsten, Nickel, Diamonds. Established 2009.",
+    "commodities": "Tungsten, Nickel, Diamonds"
+  },
+  {
+    "latitude": 22.5209,
+    "longitude": 82.9026,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Valley-South-41",
+    "description": "In-Situ Leaching mine site producing Palladium. Established 2012.",
+    "commodities": "Palladium"
+  },
+  {
+    "latitude": 39.1829,
+    "longitude": 111.72,
+    "country": "China",
+    "state": "Shandong",
+    "name": "Valley-East-42",
+    "description": "Open Pit mine site producing Lithium, Coal. Established 1981.",
+    "commodities": "Lithium, Coal"
+  },
+  {
+    "latitude": 61.6806,
+    "longitude": -131.2138,
+    "country": "USA",
+    "state": "Montana",
+    "name": "Valley-Central-43",
+    "description": "Placer mine site producing Tin, Molybdenum. Established 1974.",
+    "commodities": "Tin, Molybdenum"
+  },
+  {
+    "latitude": -16.839,
+    "longitude": -43.7519,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Summit-North-44",
+    "description": "Underground mine site producing Diamonds, Silver, Cobalt. Established 2000.",
+    "commodities": "Diamonds, Silver, Cobalt"
+  },
+  {
+    "latitude": -41.2211,
+    "longitude": 142.5759,
+    "country": "Australia",
+    "state": "South Australia",
+    "name": "Valley-Central-45",
+    "description": "Dredging mine site producing Tin, Zinc, Rare Earth Elements. Established 1989.",
+    "commodities": "Tin, Zinc, Rare Earth Elements"
+  },
+  {
+    "latitude": -13.5624,
+    "longitude": -75.685,
+    "country": "Peru",
+    "state": "Puno",
+    "name": "Mountain-North-46",
+    "description": "Open Pit mine site producing Bauxite, Copper. Established 1990.",
+    "commodities": "Bauxite, Copper"
+  },
+  {
+    "latitude": -10.5659,
+    "longitude": -68.1139,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Mountain-West-47",
+    "description": "Mountain Top Removal mine site producing Nickel. Established 1987.",
+    "commodities": "Nickel"
+  },
+  {
+    "latitude": 45.6599,
+    "longitude": -78.8164,
+    "country": "Canada",
+    "state": "Alberta",
+    "name": "Ridge-North-48",
+    "description": "Mountain Top Removal mine site producing Copper, Rare Earth Elements, Palladium. Established 2009.",
+    "commodities": "Copper, Rare Earth Elements, Palladium"
+  },
+  {
+    "latitude": 18.8038,
+    "longitude": 91.5944,
+    "country": "China",
+    "state": "Shanxi",
+    "name": "Ridge-West-49",
+    "description": "Placer mine site producing Cobalt, Rare Earth Elements. Established 1991.",
+    "commodities": "Cobalt, Rare Earth Elements"
+  },
+  {
+    "latitude": -38.8556,
+    "longitude": 131.8814,
+    "country": "Australia",
+    "state": "South Australia",
+    "name": "Peak-Central-50",
+    "description": "Open Pit mine site producing Zinc, Nickel. Established 1969.",
+    "commodities": "Zinc, Nickel"
+  },
+  {
+    "latitude": 58.4818,
+    "longitude": -100.9497,
+    "country": "Canada",
+    "state": "Saskatchewan",
+    "name": "Valley-North-51",
+    "description": "Solution Mining mine site producing Diamonds, Cobalt. Established 2011.",
+    "commodities": "Diamonds, Cobalt"
+  },
+  {
+    "latitude": -55.5271,
+    "longitude": -70.7589,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Summit-East-52",
+    "description": "Open Pit mine site producing Iron Ore. Established 1988.",
+    "commodities": "Iron Ore"
+  },
+  {
+    "latitude": -31.4336,
+    "longitude": -46.3798,
+    "country": "Brazil",
+    "state": "Minas Gerais",
+    "name": "Summit-South-53",
+    "description": "Placer mine site producing Cobalt, Copper, Rare Earth Elements. Established 1972.",
+    "commodities": "Cobalt, Copper, Rare Earth Elements"
+  },
+  {
+    "latitude": -11.8404,
+    "longitude": -73.0993,
+    "country": "Peru",
+    "state": "Cajamarca",
+    "name": "Peak-North-54",
+    "description": "Mountain Top Removal mine site producing Tungsten, Nickel, Rare Earth Elements. Established 1976.",
+    "commodities": "Tungsten, Nickel, Rare Earth Elements"
+  },
+  {
+    "latitude": -8.421,
+    "longitude": -80.2812,
+    "country": "Peru",
+    "state": "Puno",
+    "name": "Ridge-South-55",
+    "description": "Mountain Top Removal mine site producing Lithium, Tin, Palladium. Established 1961.",
+    "commodities": "Lithium, Tin, Palladium"
+  },
+  {
+    "latitude": 60.6169,
+    "longitude": -69.6943,
+    "country": "USA",
+    "state": "California",
+    "name": "Canyon-West-56",
+    "description": "Solution Mining mine site producing Platinum. Established 1956.",
+    "commodities": "Platinum"
+  },
+  {
+    "latitude": -7.6088,
+    "longitude": -62.4855,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Mountain-South-57",
+    "description": "Placer mine site producing Rare Earth Elements. Established 1994.",
+    "commodities": "Rare Earth Elements"
+  },
+  {
+    "latitude": -3.1708,
+    "longitude": -79.3285,
+    "country": "Peru",
+    "state": "Junin",
+    "name": "Valley-West-58",
+    "description": "Dredging mine site producing Iron Ore. Established 1999.",
+    "commodities": "Iron Ore"
+  },
+  {
+    "latitude": -15.8378,
+    "longitude": 124.3216,
+    "country": "Australia",
+    "state": "Western Australia",
+    "name": "Valley-South-59",
+    "description": "Placer mine site producing Diamonds, Tungsten. Established 1984.",
+    "commodities": "Diamonds, Tungsten"
+  },
+  {
+    "latitude": -39.5454,
+    "longitude": 118.9462,
+    "country": "Australia",
+    "state": "New South Wales",
+    "name": "Valley-Central-60",
+    "description": "Open Pit mine site producing Tungsten, Nickel. Established 2015.",
+    "commodities": "Tungsten, Nickel"
+  },
+  {
+    "latitude": 33.3557,
+    "longitude": 132.1521,
+    "country": "China",
+    "state": "Shandong",
+    "name": "Summit-South-61",
+    "description": "Solution Mining mine site producing Lead. Established 1957.",
+    "commodities": "Lead"
+  },
+  {
+    "latitude": 47.0643,
+    "longitude": -129.0037,
+    "country": "USA",
+    "state": "Nevada",
+    "name": "Peak-Central-62",
+    "description": "Open Pit mine site producing Iron Ore. Established 1956.",
+    "commodities": "Iron Ore"
+  },
+  {
+    "latitude": -26.2329,
+    "longitude": -71.5353,
+    "country": "Chile",
+    "state": "Coquimbo",
+    "name": "Canyon-Central-63",
+    "description": "Open Pit mine site producing Gold, Iron Ore, Lead. Established 1966.",
+    "commodities": "Gold, Iron Ore, Lead"
+  },
+  {
+    "latitude": -45.7136,
+    "longitude": -72.1609,
+    "country": "Chile",
+    "state": "Coquimbo",
+    "name": "Canyon-Central-64",
+    "description": "In-Situ Leaching mine site producing Zinc, Copper, Coal. Established 1983.",
+    "commodities": "Zinc, Copper, Coal"
+  },
+  {
+    "latitude": 38.7699,
+    "longitude": -77.3314,
+    "country": "USA",
+    "state": "California",
+    "name": "Valley-West-65",
+    "description": "Open Pit mine site producing Diamonds, Lead, Gold. Established 1981.",
+    "commodities": "Diamonds, Lead, Gold"
+  },
+  {
+    "latitude": -18.5798,
+    "longitude": -75.6942,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Ridge-North-66",
+    "description": "Mountain Top Removal mine site producing Diamonds. Established 1998.",
+    "commodities": "Diamonds"
+  },
+  {
+    "latitude": -17.0024,
+    "longitude": 124.2127,
+    "country": "Australia",
+    "state": "Queensland",
+    "name": "Valley-North-67",
+    "description": "Solution Mining mine site producing Gold, Lead, Lithium. Established 1951.",
+    "commodities": "Gold, Lead, Lithium"
+  },
+  {
+    "latitude": 26.0621,
+    "longitude": 85.8585,
+    "country": "China",
+    "state": "Shanxi",
+    "name": "Summit-West-68",
+    "description": "Underground mine site producing Bauxite, Iron Ore, Gold. Established 1993.",
+    "commodities": "Bauxite, Iron Ore, Gold"
+  },
+  {
+    "latitude": -24.9377,
+    "longitude": -64.8776,
+    "country": "Brazil",
+    "state": "Mato Grosso",
+    "name": "Mountain-South-69",
+    "description": "Underground mine site producing Gold, Nickel. Established 1950.",
+    "commodities": "Gold, Nickel"
+  },
+  {
+    "latitude": -3.0473,
+    "longitude": -77.8313,
+    "country": "Peru",
+    "state": "Arequipa",
+    "name": "Canyon-West-70",
+    "description": "Dredging mine site producing Platinum. Established 1991.",
+    "commodities": "Platinum"
+  },
+  {
+    "latitude": 31.9448,
+    "longitude": -153.9449,
+    "country": "USA",
+    "state": "Arizona",
+    "name": "Ridge-West-71",
+    "description": "Underground mine site producing Copper. Established 2004.",
+    "commodities": "Copper"
+  },
+  {
+    "latitude": -36.8085,
+    "longitude": -68.5832,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Mountain-West-72",
+    "description": "In-Situ Leaching mine site producing Lithium, Diamonds. Established 1980.",
+    "commodities": "Lithium, Diamonds"
+  },
+  {
+    "latitude": -12.5542,
+    "longitude": -78.924,
+    "country": "Peru",
+    "state": "Junin",
+    "name": "Summit-East-73",
+    "description": "Strip mine site producing Bauxite, Lithium, Silver. Established 2009.",
+    "commodities": "Bauxite, Lithium, Silver"
+  },
+  {
+    "latitude": 23.7591,
+    "longitude": 129.2604,
+    "country": "China",
+    "state": "Inner Mongolia",
+    "name": "Summit-West-74",
+    "description": "Placer mine site producing Diamonds, Silver, Tungsten. Established 2012.",
+    "commodities": "Diamonds, Silver, Tungsten"
+  },
+  {
+    "latitude": 58.6529,
+    "longitude": -74.944,
+    "country": "Canada",
+    "state": "Quebec",
+    "name": "Summit-Central-75",
+    "description": "Mountain Top Removal mine site producing Diamonds, Lead, Iron Ore. Established 2007.",
+    "commodities": "Diamonds, Lead, Iron Ore"
+  },
+  {
+    "latitude": 40.2774,
+    "longitude": 109.8376,
+    "country": "China",
+    "state": "Yunnan",
+    "name": "Ridge-Central-76",
+    "description": "Open Pit mine site producing Coal. Established 2015.",
+    "commodities": "Coal"
+  },
+  {
+    "latitude": 49.6009,
+    "longitude": -67.6655,
+    "country": "Canada",
+    "state": "Quebec",
+    "name": "Valley-West-77",
+    "description": "Placer mine site producing Cobalt. Established 2002.",
+    "commodities": "Cobalt"
+  },
+  {
+    "latitude": 44.2606,
+    "longitude": -87.168,
+    "country": "USA",
+    "state": "Alaska",
+    "name": "Peak-North-78",
+    "description": "In-Situ Leaching mine site producing Iron Ore, Lithium, Palladium. Established 1988.",
+    "commodities": "Iron Ore, Lithium, Palladium"
+  },
+  {
+    "latitude": -0.9214,
+    "longitude": -70.1212,
+    "country": "Peru",
+    "state": "Junin",
+    "name": "Valley-South-79",
+    "description": "Strip mine site producing Zinc, Iron Ore, Diamonds. Established 1954.",
+    "commodities": "Zinc, Iron Ore, Diamonds"
+  },
+  {
+    "latitude": -7.5647,
+    "longitude": -40.7157,
+    "country": "Brazil",
+    "state": "Minas Gerais",
+    "name": "Valley-Central-80",
+    "description": "Solution Mining mine site producing Bauxite, Rare Earth Elements, Lithium. Established 1988.",
+    "commodities": "Bauxite, Rare Earth Elements, Lithium"
+  },
+  {
+    "latitude": -22.9335,
+    "longitude": 135.3932,
+    "country": "Australia",
+    "state": "Queensland",
+    "name": "Ridge-East-81",
+    "description": "Underground mine site producing Cobalt, Tungsten, Gold. Established 1954.",
+    "commodities": "Cobalt, Tungsten, Gold"
+  },
+  {
+    "latitude": 39.3295,
+    "longitude": 110.9849,
+    "country": "China",
+    "state": "Shanxi",
+    "name": "Peak-East-82",
+    "description": "Placer mine site producing Lithium. Established 2019.",
+    "commodities": "Lithium"
+  },
+  {
+    "latitude": 0.2181,
+    "longitude": -61.956,
+    "country": "Brazil",
+    "state": "Goias",
+    "name": "Valley-South-83",
+    "description": "Mountain Top Removal mine site producing Tungsten. Established 1962.",
+    "commodities": "Tungsten"
+  },
+  {
+    "latitude": -30.1948,
+    "longitude": 117.9762,
+    "country": "Australia",
+    "state": "New South Wales",
+    "name": "Mountain-Central-84",
+    "description": "Underground mine site producing Cobalt, Silver. Established 2020.",
+    "commodities": "Cobalt, Silver"
+  },
+  {
+    "latitude": -14.9165,
+    "longitude": 131.6802,
+    "country": "Australia",
+    "state": "Western Australia",
+    "name": "Ridge-East-85",
+    "description": "Strip mine site producing Iron Ore. Established 1983.",
+    "commodities": "Iron Ore"
+  },
+  {
+    "latitude": 29.0152,
+    "longitude": 100.0841,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Peak-North-86",
+    "description": "Solution Mining mine site producing Platinum, Nickel, Coal. Established 2008.",
+    "commodities": "Platinum, Nickel, Coal"
+  },
+  {
+    "latitude": -22.031,
+    "longitude": -58.0565,
+    "country": "Brazil",
+    "state": "Minas Gerais",
+    "name": "Valley-Central-87",
+    "description": "Solution Mining mine site producing Nickel, Molybdenum. Established 1991.",
+    "commodities": "Nickel, Molybdenum"
+  },
+  {
+    "latitude": -29.6432,
+    "longitude": -75.2643,
+    "country": "Chile",
+    "state": "Antofagasta",
+    "name": "Mountain-North-88",
+    "description": "Dredging mine site producing Lithium, Zinc, Tungsten. Established 1957.",
+    "commodities": "Lithium, Zinc, Tungsten"
+  },
+  {
+    "latitude": 30.3596,
+    "longitude": 104.5222,
+    "country": "China",
+    "state": "Shandong",
+    "name": "Summit-North-89",
+    "description": "Mountain Top Removal mine site producing Bauxite, Coal. Established 2005.",
+    "commodities": "Bauxite, Coal"
+  },
+  {
+    "latitude": -27.2423,
+    "longitude": 136.3306,
+    "country": "Australia",
+    "state": "Victoria",
+    "name": "Mountain-South-90",
+    "description": "In-Situ Leaching mine site producing Lead, Copper, Palladium. Established 1959.",
+    "commodities": "Lead, Copper, Palladium"
+  },
+  {
+    "latitude": -23.541,
+    "longitude": 151.5637,
+    "country": "Australia",
+    "state": "Queensland",
+    "name": "Summit-Central-91",
+    "description": "Underground mine site producing Gold, Tin, Rare Earth Elements. Established 1976.",
+    "commodities": "Gold, Tin, Rare Earth Elements"
+  },
+  {
+    "latitude": 43.3727,
+    "longitude": -124.6155,
+    "country": "USA",
+    "state": "Arizona",
+    "name": "Summit-North-92",
+    "description": "Dredging mine site producing Tungsten, Zinc. Established 1954.",
+    "commodities": "Tungsten, Zinc"
+  },
+  {
+    "latitude": -2.8746,
+    "longitude": -74.8694,
+    "country": "Peru",
+    "state": "Arequipa",
+    "name": "Mountain-Central-93",
+    "description": "Open Pit mine site producing Silver, Coal, Iron Ore. Established 2008.",
+    "commodities": "Silver, Coal, Iron Ore"
+  },
+  {
+    "latitude": 59.0137,
+    "longitude": -123.045,
+    "country": "Canada",
+    "state": "British Columbia",
+    "name": "Mountain-East-94",
+    "description": "Mountain Top Removal mine site producing Silver, Palladium, Diamonds. Established 1995.",
+    "commodities": "Silver, Palladium, Diamonds"
+  },
+  {
+    "latitude": 44.2794,
+    "longitude": -101.366,
+    "country": "USA",
+    "state": "Montana",
+    "name": "Peak-East-95",
+    "description": "Solution Mining mine site producing Nickel, Cobalt, Gold. Established 2000.",
+    "commodities": "Nickel, Cobalt, Gold"
+  },
+  {
+    "latitude": 57.2855,
+    "longitude": -91.7585,
+    "country": "Canada",
+    "state": "Saskatchewan",
+    "name": "Mountain-South-96",
+    "description": "Placer mine site producing Bauxite, Zinc, Copper. Established 1980.",
+    "commodities": "Bauxite, Zinc, Copper"
+  },
+  {
+    "latitude": 25.5205,
+    "longitude": 126.2242,
+    "country": "China",
+    "state": "Xinjiang",
+    "name": "Valley-West-97",
+    "description": "Mountain Top Removal mine site producing Bauxite, Molybdenum. Established 1985.",
+    "commodities": "Bauxite, Molybdenum"
+  },
+  {
+    "latitude": 59.6497,
+    "longitude": -168.2832,
+    "country": "USA",
+    "state": "Nevada",
+    "name": "Ridge-West-98",
+    "description": "Underground mine site producing Lead, Lithium, Zinc. Established 1973.",
+    "commodities": "Lead, Lithium, Zinc"
+  },
+  {
+    "latitude": -0.688,
+    "longitude": -78.0344,
+    "country": "Peru",
+    "state": "Cajamarca",
+    "name": "Peak-Central-99",
+    "description": "Open Pit mine site producing Copper. Established 1960.",
+    "commodities": "Copper"
+  },
+  {
+    "latitude": 49.0414,
+    "longitude": -83.9004,
+    "country": "USA",
+    "state": "Arizona",
+    "name": "Peak-South-100",
+    "description": "Strip mine site producing Nickel. Established 1966.",
+    "commodities": "Nickel"
+  }
+]

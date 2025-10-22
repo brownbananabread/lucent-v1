@@ -1,0 +1,115 @@
+resources:
+  remote-files:
+    - title: Green Gravity Master Shaft List
+      location: s3://2025 04 07_GREEN GRAVITY MASTER SHAFT LIST_ BOD3 April  2025.xlsx
+      table_name: gg_master_shaft_list_2025
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+    - title: Global Coal Mine Tracker
+      location: s3://Global-Coal-Mine-Tracker-April-2023.xlsx
+      table_name: gg_global_coal_mines_2023
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+    - title: GlobalData Mine Depth Data
+      location: s3://GlobalData_Mine Depth Data_Extract for Green Gravity_2023.xlsx
+      table_name: gg_global_data_mine_depth_2023
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+    - title: New Zealand Mine Sites
+      location: s3://New Zealand - Mine Sites (no depth).xlsx
+      table_name: gg_new_zealand_mine_sites
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+    - title: USGS USA and Global Mine Data
+      location: s3://USGS_USA and Global Mine data (no depth).xlsx
+      table_name: gg_usgs_usa_and_global_mine_data
+      type: primary
+      source_type: xlsx
+      include_resource: false
+
+    - title: APVI Solar Supplementary
+      location: s3://apvi_solar_supplementary.xlsx
+      table_name: apvi_solar_supplementary_2025
+      type: supplementary
+      source_type: xlsx
+      include_resource: true
+
+    - title: WA Mines 2025
+      location: s3://wa_mines_2025.xlsx
+      table_name: wa_mines_2025
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+  local-files:
+    - title: Example CSV Data
+      location: src/data/mine_sites.csv
+      table_name: local_csv_mine_sites
+      type: primary
+      source_type: csv
+      include_resource: true
+    
+    - title: Example JSON Data
+      location: src/data/mine_sites.json
+      table_name: local_json_mine_sites
+      type: primary
+      source_type: json
+      include_resource: true
+
+    - title: Example XLSX Data
+      location: src/data/mine_sites.xlsx
+      table_name: local_xlsx_mine_sites
+      type: primary
+      source_type: xlsx
+      include_resource: true
+
+    - title: A2 Design Report Data
+      location: src/data/a2-design-report.txt
+      table_name: vector_store
+      type: embeddings
+      source_type: txt
+      include_resource: true
+
+  apis:
+    - title: MinView Drillholes API
+      location: https://gs-mv.geoscience.nsw.gov.au/geoserver/gsnsw/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=gsnsw:dw_drillhole_mv&outputFormat=application/json&maxFeatures=10
+      table_name: api_minview_drillholes
+      type: primary
+      source_type: api
+      include_resource: true
+
+  scripts:
+    - title: Google Places API
+      location: "src/scripts/places_api.py"
+      table_name: api_google_places
+      type: supplementary
+      source_type: places_api
+      include_resource: true
+      configuration:
+        query: >-
+          SELECT mine_id, latitude, longitude, created_at, updated_at 
+          FROM data_clean.dim_spatial 
+          WHERE mine_id IN (SELECT mine_id FROM data_clean.dim_raw LIMIT 10)
+
+  databases:
+    - title: Production Database
+      location: host.docker.internal:5433/postgres
+      table_name: local_db_mine_sites
+      type: primary
+      source_type: database
+      include_resource: true
+      configuration:
+        host: host.docker.internal
+        port: 5433
+        database: postgres
+        username: root
+        password: password
+        query: SELECT id, latitude, longitude, country, state, name, description, commodities FROM public.mines

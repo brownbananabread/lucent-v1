@@ -1,0 +1,59 @@
+{
+  "dim_spatial": {
+    "latitude": ["Latitude", "latitude", "lat", "y", "Operation Latitude (NZGD2000)", "LATITUDE"],
+    "longitude": ["Longitude", "longitude", "lng", "long", "x", "Longtitude", "Operation Longitude (NZGD2000)", "LONGITUDE"]
+  },
+  "dim_locations": {
+    "country": ["Country", "country", "nation"],
+    "state": ["State", "state", "province", "region", "State, Province", "Regional Council"],
+    "district": ["District", "district", "county", "Territorial Authority"],
+    "electorate": ["Electorate", "electorate", "constituency"],
+    "rez_zone": ["REZ Zone", "rez_zone", "regulatory_zone"],
+    "city": ["City", "city", "town", "Nearest township", "loc", "Location"],
+    "region": ["Region", "region", "Subregion"]
+  },
+  "dim_identification": {
+    "primary_name": ["Mine name unique", "Operation Name", "Mine Name", "primary_name", "name", "mine_name"],
+    "alternate_name": ["Alias", "Mine Name AKAs", "Previous Operation Names", "alternate_name", "alt_name", "other_name"],
+    "mine_id_external": ["Mine ID", "Mine IDs", "Operation ID", "mine_id_external", "external_id", "SITE_CODE"],
+    "description": ["Description", "description", "desc", "details", "Operation Notes", "0w"]
+  },
+  "dim_status": {
+    "status": ["Operating Status 1", "Operating status", "Status", "Operation Phase", "Stage", "status", "mine_status", "operational_status", "FEATURE_GR"],
+    "status_detail": ["Status Detail", "Substage", "status_detail"],
+    "closure_year": ["Close date", "closure_year", "closed_year", "end_year"],
+    "closure_reason": ["Closure INFO", "Closure summary", "closure_reason", "closure_cause"],
+    "closure_window": ["Closure window", "closure_window"],
+    "opening_year": ["Opening Year", "opening_year"]
+  },
+  "dim_company": {
+    "company_name": ["Company", "Operator Name", "Operators", "Owners", "company_name", "operator", "owner"],
+    "parent_company": ["Major affiliation", "Parent Company", "parent_company"],
+    "company_website": ["Company website", "company_website", "website", "url"],
+    "equity_partners": ["Equity Partners", "equity_partners"]
+  },
+  "dim_energy": {
+    "grid_connection": ["Grid connection", "grid_connection", "grid_connected", "power_grid"]
+  },
+  "dim_evaluations": {
+    "evaluation_status": ["evaluation_status", "eval_status", "assessment_status"],
+    "evaluation_description": ["evaluation_description", "eval_desc", "evaluation"],
+    "evaluation_score": ["evaluation_score", "eval_score", "score"]
+  },
+  "fact_shafts": {
+    "shaft_depth": ["Max known shaft depth (m)", "Max Depth - Clean", "Mine Depth (m)", "shaft_depth", "depth", "total_depth", "LENGTH"],
+    "depth_range": ["Depth range (m)  (dropdown)", "Depth Range 2", "depth_range"],
+    "shaft_diameter": ["Diameter", "shaft_diameter", "diameter", "width", "WIDTH"],
+    "shaft_comment": ["#/ Depth of shafts (comments)", "Diameter comment", "shaft_comment", "comment", "notes", "Comments"],
+    "no_shafts": ["No of shafts (#)", "no_shafts", "shaft_count"],
+    "confidence_level": ["Level of confidence in DEPTH data (H/M/L)", "confidence_level", "level_confidence_depth"]
+  },
+  "fact_documentation": {
+    "reference": ["Other doc links #1", "Other doc links #2", "Google map link?", "Google map link #2?", "GEM Wiki Page (ENG)", "GEM Wiki Page (Non-ENG)", "reference", "references", "documentation", "docs", "WEB_LINK"]
+  },
+  "fact_commodities": {
+    "commodity": ["Major Commodities", "Comm type", "Commodity", "commodity", "commodities", "mineral", "minerals", "TARGET_COM"],
+    "coal_type": ["Coal Type", "coal_type"],
+    "coal_grade": ["Coal Grade", "coal_grade"]
+  }
+}

@@ -1,0 +1,101 @@
+latitude,longitude,country,state,name,description,commodities
+-0.5689,-69.7082,Brazil,Goias,Summit-East-1,Underground mine site producing Rare Earth Elements. Established 1959.,Rare Earth Elements
+37.0739,-109.153,USA,Alaska,Peak-Central-2,"Mountain Top Removal mine site producing Palladium, Lithium, Nickel. Established 2001.","Palladium, Lithium, Nickel"
+66.3649,-141.2243,USA,Montana,Summit-East-3,"Strip mine site producing Lithium, Gold, Palladium. Established 1981.","Lithium, Gold, Palladium"
+42.3347,75.9838,China,Inner Mongolia,Mountain-South-4,In-Situ Leaching mine site producing Diamonds. Established 1958.,Diamonds
+20.7399,94.5948,China,Yunnan,Summit-South-5,"Solution Mining mine site producing Lithium, Cobalt, Diamonds. Established 1961.","Lithium, Cobalt, Diamonds"
+65.2153,-74.7128,USA,Nevada,Canyon-East-6,"Solution Mining mine site producing Bauxite, Coal. Established 1969.","Bauxite, Coal"
+-25.2543,-69.235,Brazil,Mato Grosso,Valley-North-7,"Underground mine site producing Copper, Cobalt. Established 1963.","Copper, Cobalt"
+-28.2186,137.0314,Australia,New South Wales,Valley-East-8,"Dredging mine site producing Copper, Platinum. Established 1981.","Copper, Platinum"
+26.688,-123.7964,USA,Alaska,Canyon-South-9,Underground mine site producing Coal. Established 1950.,Coal
+-36.9609,137.338,Australia,Queensland,Summit-West-10,"Strip mine site producing Molybdenum, Bauxite. Established 1954.","Molybdenum, Bauxite"
+36.0477,75.1107,China,Xinjiang,Summit-South-11,"In-Situ Leaching mine site producing Lithium, Iron Ore. Established 1977.","Lithium, Iron Ore"
+48.2456,133.2662,China,Xinjiang,Canyon-North-12,"Solution Mining mine site producing Platinum, Tin. Established 1975.","Platinum, Tin"
+59.7993,-63.8409,Canada,Saskatchewan,Mountain-East-13,"Open Pit mine site producing Coal, Zinc. Established 1968.","Coal, Zinc"
+-29.7431,29.8668,South Africa,North West,Ridge-West-14,"Placer mine site producing Rare Earth Elements, Platinum, Lithium. Established 2015.","Rare Earth Elements, Platinum, Lithium"
+-40.1083,-69.2308,Chile,Antofagasta,Valley-South-15,"Mountain Top Removal mine site producing Iron Ore, Nickel. Established 1982.","Iron Ore, Nickel"
+36.1259,-160.8962,USA,California,Ridge-North-16,"Dredging mine site producing Lithium, Silver, Molybdenum. Established 1974.","Lithium, Silver, Molybdenum"
+-22.7969,-35.0382,Brazil,Mato Grosso,Peak-South-17,In-Situ Leaching mine site producing Copper. Established 1950.,Copper
+27.5489,-103.1687,USA,California,Summit-Central-18,"In-Situ Leaching mine site producing Nickel, Molybdenum. Established 2019.","Nickel, Molybdenum"
+-33.6939,31.2331,South Africa,Gauteng,Peak-East-19,"Solution Mining mine site producing Palladium, Copper, Tin. Established 2004.","Palladium, Copper, Tin"
+-11.5722,151.499,Australia,Victoria,Valley-South-20,"Solution Mining mine site producing Copper, Zinc. Established 1975.","Copper, Zinc"
+-1.2396,-40.606,Brazil,Para,Mountain-Central-21,"Placer mine site producing Copper, Iron Ore, Tungsten. Established 1987.","Copper, Iron Ore, Tungsten"
+-44.0493,152.6498,Australia,South Australia,Valley-South-22,"Underground mine site producing Zinc, Diamonds, Platinum. Established 2003.","Zinc, Diamonds, Platinum"
+67.5778,-137.8086,USA,Nevada,Mountain-North-23,"Strip mine site producing Coal, Rare Earth Elements, Zinc. Established 1978.","Coal, Rare Earth Elements, Zinc"
+-19.7333,-38.0032,Brazil,Minas Gerais,Valley-Central-24,"Mountain Top Removal mine site producing Iron Ore, Rare Earth Elements, Silver. Established 1953.","Iron Ore, Rare Earth Elements, Silver"
+59.1027,-81.1305,Canada,Saskatchewan,Mountain-South-25,Solution Mining mine site producing Rare Earth Elements. Established 1975.,Rare Earth Elements
+22.0258,133.6996,China,Inner Mongolia,Mountain-North-26,"Solution Mining mine site producing Bauxite, Lithium, Coal. Established 2017.","Bauxite, Lithium, Coal"
+52.7047,-139.141,Canada,Quebec,Valley-North-27,"Mountain Top Removal mine site producing Nickel, Coal, Lithium. Established 1993.","Nickel, Coal, Lithium"
+-29.3002,-72.5488,Chile,Antofagasta,Mountain-South-28,"In-Situ Leaching mine site producing Iron Ore, Silver, Lithium. Established 1998.","Iron Ore, Silver, Lithium"
+-14.1403,-75.2493,Peru,Ancash,Valley-East-29,"In-Situ Leaching mine site producing Nickel, Tin, Bauxite. Established 1986.","Nickel, Tin, Bauxite"
+59.4818,-67.205,Canada,Alberta,Canyon-Central-30,Solution Mining mine site producing Iron Ore. Established 2018.,Iron Ore
+-24.1131,-76.7009,Chile,Coquimbo,Mountain-West-31,"Solution Mining mine site producing Coal, Zinc. Established 1999.","Coal, Zinc"
+45.514,-143.827,USA,California,Mountain-South-32,"In-Situ Leaching mine site producing Platinum, Bauxite, Tin. Established 1997.","Platinum, Bauxite, Tin"
+50.6423,-150.0883,USA,Montana,Canyon-West-33,"Solution Mining mine site producing Copper, Silver. Established 1986.","Copper, Silver"
+-31.8363,24.2302,South Africa,Limpopo,Mountain-East-34,"Mountain Top Removal mine site producing Platinum, Diamonds, Gold. Established 1980.","Platinum, Diamonds, Gold"
+-23.336,136.2126,Australia,Western Australia,Canyon-South-35,"In-Situ Leaching mine site producing Nickel, Zinc. Established 1966.","Nickel, Zinc"
+-19.4842,121.0714,Australia,Western Australia,Mountain-Central-36,"Mountain Top Removal mine site producing Lithium, Gold, Molybdenum. Established 2014.","Lithium, Gold, Molybdenum"
+32.6258,74.7765,China,Yunnan,Valley-West-37,"Strip mine site producing Palladium, Tin. Established 1970.","Palladium, Tin"
+42.9803,88.8508,China,Xinjiang,Peak-East-38,"Strip mine site producing Platinum, Molybdenum. Established 2002.","Platinum, Molybdenum"
+-24.1049,-49.9192,Brazil,Mato Grosso,Canyon-West-39,"Solution Mining mine site producing Coal, Bauxite, Copper. Established 1973.","Coal, Bauxite, Copper"
+-35.1368,-73.2297,Chile,Atacama,Canyon-South-40,"Placer mine site producing Tungsten, Nickel, Diamonds. Established 2009.","Tungsten, Nickel, Diamonds"
+22.5209,82.9026,China,Xinjiang,Valley-South-41,In-Situ Leaching mine site producing Palladium. Established 2012.,Palladium
+39.1829,111.72,China,Shandong,Valley-East-42,"Open Pit mine site producing Lithium, Coal. Established 1981.","Lithium, Coal"
+61.6806,-131.2138,USA,Montana,Valley-Central-43,"Placer mine site producing Tin, Molybdenum. Established 1974.","Tin, Molybdenum"
+-16.839,-43.7519,Brazil,Mato Grosso,Summit-North-44,"Underground mine site producing Diamonds, Silver, Cobalt. Established 2000.","Diamonds, Silver, Cobalt"
+-41.2211,142.5759,Australia,South Australia,Valley-Central-45,"Dredging mine site producing Tin, Zinc, Rare Earth Elements. Established 1989.","Tin, Zinc, Rare Earth Elements"
+-13.5624,-75.685,Peru,Puno,Mountain-North-46,"Open Pit mine site producing Bauxite, Copper. Established 1990.","Bauxite, Copper"
+-10.5659,-68.1139,Brazil,Mato Grosso,Mountain-West-47,Mountain Top Removal mine site producing Nickel. Established 1987.,Nickel
+45.6599,-78.8164,Canada,Alberta,Ridge-North-48,"Mountain Top Removal mine site producing Copper, Rare Earth Elements, Palladium. Established 2009.","Copper, Rare Earth Elements, Palladium"
+18.8038,91.5944,China,Shanxi,Ridge-West-49,"Placer mine site producing Cobalt, Rare Earth Elements. Established 1991.","Cobalt, Rare Earth Elements"
+-38.8556,131.8814,Australia,South Australia,Peak-Central-50,"Open Pit mine site producing Zinc, Nickel. Established 1969.","Zinc, Nickel"
+58.4818,-100.9497,Canada,Saskatchewan,Valley-North-51,"Solution Mining mine site producing Diamonds, Cobalt. Established 2011.","Diamonds, Cobalt"
+-55.5271,-70.7589,Chile,Antofagasta,Summit-East-52,Open Pit mine site producing Iron Ore. Established 1988.,Iron Ore
+-31.4336,-46.3798,Brazil,Minas Gerais,Summit-South-53,"Placer mine site producing Cobalt, Copper, Rare Earth Elements. Established 1972.","Cobalt, Copper, Rare Earth Elements"
+-11.8404,-73.0993,Peru,Cajamarca,Peak-North-54,"Mountain Top Removal mine site producing Tungsten, Nickel, Rare Earth Elements. Established 1976.","Tungsten, Nickel, Rare Earth Elements"
+-8.421,-80.2812,Peru,Puno,Ridge-South-55,"Mountain Top Removal mine site producing Lithium, Tin, Palladium. Established 1961.","Lithium, Tin, Palladium"
+60.6169,-69.6943,USA,California,Canyon-West-56,Solution Mining mine site producing Platinum. Established 1956.,Platinum
+-7.6088,-62.4855,Brazil,Mato Grosso,Mountain-South-57,Placer mine site producing Rare Earth Elements. Established 1994.,Rare Earth Elements
+-3.1708,-79.3285,Peru,Junin,Valley-West-58,Dredging mine site producing Iron Ore. Established 1999.,Iron Ore
+-15.8378,124.3216,Australia,Western Australia,Valley-South-59,"Placer mine site producing Diamonds, Tungsten. Established 1984.","Diamonds, Tungsten"
+-39.5454,118.9462,Australia,New South Wales,Valley-Central-60,"Open Pit mine site producing Tungsten, Nickel. Established 2015.","Tungsten, Nickel"
+33.3557,132.1521,China,Shandong,Summit-South-61,Solution Mining mine site producing Lead. Established 1957.,Lead
+47.0643,-129.0037,USA,Nevada,Peak-Central-62,Open Pit mine site producing Iron Ore. Established 1956.,Iron Ore
+-26.2329,-71.5353,Chile,Coquimbo,Canyon-Central-63,"Open Pit mine site producing Gold, Iron Ore, Lead. Established 1966.","Gold, Iron Ore, Lead"
+-45.7136,-72.1609,Chile,Coquimbo,Canyon-Central-64,"In-Situ Leaching mine site producing Zinc, Copper, Coal. Established 1983.","Zinc, Copper, Coal"
+38.7699,-77.3314,USA,California,Valley-West-65,"Open Pit mine site producing Diamonds, Lead, Gold. Established 1981.","Diamonds, Lead, Gold"
+-18.5798,-75.6942,Chile,Antofagasta,Ridge-North-66,Mountain Top Removal mine site producing Diamonds. Established 1998.,Diamonds
+-17.0024,124.2127,Australia,Queensland,Valley-North-67,"Solution Mining mine site producing Gold, Lead, Lithium. Established 1951.","Gold, Lead, Lithium"
+26.0621,85.8585,China,Shanxi,Summit-West-68,"Underground mine site producing Bauxite, Iron Ore, Gold. Established 1993.","Bauxite, Iron Ore, Gold"
+-24.9377,-64.8776,Brazil,Mato Grosso,Mountain-South-69,"Underground mine site producing Gold, Nickel. Established 1950.","Gold, Nickel"
+-3.0473,-77.8313,Peru,Arequipa,Canyon-West-70,Dredging mine site producing Platinum. Established 1991.,Platinum
+31.9448,-153.9449,USA,Arizona,Ridge-West-71,Underground mine site producing Copper. Established 2004.,Copper
+-36.8085,-68.5832,Chile,Antofagasta,Mountain-West-72,"In-Situ Leaching mine site producing Lithium, Diamonds. Established 1980.","Lithium, Diamonds"
+-12.5542,-78.924,Peru,Junin,Summit-East-73,"Strip mine site producing Bauxite, Lithium, Silver. Established 2009.","Bauxite, Lithium, Silver"
+23.7591,129.2604,China,Inner Mongolia,Summit-West-74,"Placer mine site producing Diamonds, Silver, Tungsten. Established 2012.","Diamonds, Silver, Tungsten"
+58.6529,-74.944,Canada,Quebec,Summit-Central-75,"Mountain Top Removal mine site producing Diamonds, Lead, Iron Ore. Established 2007.","Diamonds, Lead, Iron Ore"
+40.2774,109.8376,China,Yunnan,Ridge-Central-76,Open Pit mine site producing Coal. Established 2015.,Coal
+49.6009,-67.6655,Canada,Quebec,Valley-West-77,Placer mine site producing Cobalt. Established 2002.,Cobalt
+44.2606,-87.168,USA,Alaska,Peak-North-78,"In-Situ Leaching mine site producing Iron Ore, Lithium, Palladium. Established 1988.","Iron Ore, Lithium, Palladium"
+-0.9214,-70.1212,Peru,Junin,Valley-South-79,"Strip mine site producing Zinc, Iron Ore, Diamonds. Established 1954.","Zinc, Iron Ore, Diamonds"
+-7.5647,-40.7157,Brazil,Minas Gerais,Valley-Central-80,"Solution Mining mine site producing Bauxite, Rare Earth Elements, Lithium. Established 1988.","Bauxite, Rare Earth Elements, Lithium"
+-22.9335,135.3932,Australia,Queensland,Ridge-East-81,"Underground mine site producing Cobalt, Tungsten, Gold. Established 1954.","Cobalt, Tungsten, Gold"
+39.3295,110.9849,China,Shanxi,Peak-East-82,Placer mine site producing Lithium. Established 2019.,Lithium
+0.2181,-61.956,Brazil,Goias,Valley-South-83,Mountain Top Removal mine site producing Tungsten. Established 1962.,Tungsten
+-30.1948,117.9762,Australia,New South Wales,Mountain-Central-84,"Underground mine site producing Cobalt, Silver. Established 2020.","Cobalt, Silver"
+-14.9165,131.6802,Australia,Western Australia,Ridge-East-85,Strip mine site producing Iron Ore. Established 1983.,Iron Ore
+29.0152,100.0841,China,Xinjiang,Peak-North-86,"Solution Mining mine site producing Platinum, Nickel, Coal. Established 2008.","Platinum, Nickel, Coal"
+-22.031,-58.0565,Brazil,Minas Gerais,Valley-Central-87,"Solution Mining mine site producing Nickel, Molybdenum. Established 1991.","Nickel, Molybdenum"
+-29.6432,-75.2643,Chile,Antofagasta,Mountain-North-88,"Dredging mine site producing Lithium, Zinc, Tungsten. Established 1957.","Lithium, Zinc, Tungsten"
+30.3596,104.5222,China,Shandong,Summit-North-89,"Mountain Top Removal mine site producing Bauxite, Coal. Established 2005.","Bauxite, Coal"
+-27.2423,136.3306,Australia,Victoria,Mountain-South-90,"In-Situ Leaching mine site producing Lead, Copper, Palladium. Established 1959.","Lead, Copper, Palladium"
+-23.541,151.5637,Australia,Queensland,Summit-Central-91,"Underground mine site producing Gold, Tin, Rare Earth Elements. Established 1976.","Gold, Tin, Rare Earth Elements"
+43.3727,-124.6155,USA,Arizona,Summit-North-92,"Dredging mine site producing Tungsten, Zinc. Established 1954.","Tungsten, Zinc"
+-2.8746,-74.8694,Peru,Arequipa,Mountain-Central-93,"Open Pit mine site producing Silver, Coal, Iron Ore. Established 2008.","Silver, Coal, Iron Ore"
+59.0137,-123.045,Canada,British Columbia,Mountain-East-94,"Mountain Top Removal mine site producing Silver, Palladium, Diamonds. Established 1995.","Silver, Palladium, Diamonds"
+44.2794,-101.366,USA,Montana,Peak-East-95,"Solution Mining mine site producing Nickel, Cobalt, Gold. Established 2000.","Nickel, Cobalt, Gold"
+57.2855,-91.7585,Canada,Saskatchewan,Mountain-South-96,"Placer mine site producing Bauxite, Zinc, Copper. Established 1980.","Bauxite, Zinc, Copper"
+25.5205,126.2242,China,Xinjiang,Valley-West-97,"Mountain Top Removal mine site producing Bauxite, Molybdenum. Established 1985.","Bauxite, Molybdenum"
+59.6497,-168.2832,USA,Nevada,Ridge-West-98,"Underground mine site producing Lead, Lithium, Zinc. Established 1973.","Lead, Lithium, Zinc"
+-0.688,-78.0344,Peru,Cajamarca,Peak-Central-99,Open Pit mine site producing Copper. Established 1960.,Copper
+49.0414,-83.9004,USA,Arizona,Peak-South-100,Strip mine site producing Nickel. Established 1966.,Nickel

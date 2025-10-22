@@ -1,0 +1,25 @@
+{
+  "dim_locations": {
+    "country": {
+      "AUS": "Australia"
+    },
+    "state": {
+      "NSW": "New South Wales",
+      "Tas": "Tasmania",
+      "QLD": "Queensland",
+      "WA": "Western Australia",
+      "SA": "South Australia",
+      "VIC": "Victoria",
+      "NT": "Northern Territory",
+      "ACT": "Australian Capital Territory"
+    },
+    "rez_zone": {
+      "Not in REZ": "N/A"
+    }
+  },
+  "dim_status": {
+    "status": {
+      "C&M": "maintenance"
+    }
+  }
+}
