@@ -52,9 +52,15 @@ class ClusteringModel(BaseModel):
         }
     }
     """
-    def __init__(self) -> None:
+    def __init__(self, config: dict = None) -> None:
         self.mines_data = None
         self.config = DEFAULT_CONFIG.copy()
+
+        # Override with user config if provided
+        if config and 'n_clusters' in config:
+            self.config['n_clusters'] = config['n_clusters']
+        else:
+            self.config['n_clusters'] = None  # Auto-detect
 
         # Allow user to customize features
         print("\nConfiguring Clustering Algorithm...")
@@ -158,8 +164,13 @@ class ClusteringModel(BaseModel):
         if len(np.unique(df_processed, axis=0)) == 1:
             raise Exception("PreprocessingError: Data has no variance (all rows identical). Clustering cannot proceed.")
 
-        k = self._get_best_k(df_processed)
-        logger.info(f"Optimal number of clusters determined: {k}")
+        # Use specified number of clusters or auto-detect
+        if self.config.get('n_clusters') is not None:
+            k = self.config['n_clusters']
+            logger.info(f"Using specified number of clusters: {k}")
+        else:
+            k = self._get_best_k(df_processed)
+            logger.info(f"Optimal number of clusters determined: {k}")
 
         # Perform clustering
         kmeans = KMeans(n_clusters=k, **self.parameters)

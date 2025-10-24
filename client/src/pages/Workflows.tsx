@@ -708,7 +708,7 @@ export default function Job() {
       try {
         const response = await fetchRequest({
           method: 'GET',
-          url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs?limit=100'
+          url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs'
         })
         if (response?.status >= 200 && response.status < 300) {
           const fetchedLogs = response.body?.data || []
@@ -747,7 +747,7 @@ export default function Job() {
     try {
       const response = await fetchRequest({
         method: 'GET',
-        url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs?limit=100'
+        url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs'
       })
       if (response?.status >= 200 && response.status < 300) {
         const fetchedLogs = response.body?.data || []

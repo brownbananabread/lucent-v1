@@ -86,26 +86,10 @@ sudo aws-vault add lucent-admin
 echo -n "region=ap-southeast-2" | sudo tee -a /root/.aws/config > /dev/null 
 ```
 
-### 4. Launch
-```bash
-sudo make up
-```
-
-Once started navigate to http://localhost:5173. 
->It might take a minute or two for the DB to initialize and data to be shown
-
-
-
-
-***
-
 ## macOS (using Homebrew):
 ```bash
 brew install awscli aws-vault jq docker docker-compose node poetry
 ```
-
-
-
 
 ## Quick Start
 
@@ -140,6 +124,11 @@ brew install awscli aws-vault jq docker docker-compose node poetry
 | `make bot` | Run chatbot service |
 | `make print-secrets` | Display AWS secrets |
 | `make clean` | Remove containers and volumes |
+
+All interactions with AWS requires the inline `aws-vault` script to be run. This executes the terminal command proceeding `--` with the AWS credentials stored in the users keychain (without using a subshell). Any command in the makefile with `chamber exec` does the same, executing a command with secrets loaded into the environmnet. In order for chamber to get these secrets from SSM, it requires AWS authentication credentials, hence there will be scripts like:
+```bash
+aws-vault exec <account> -- chamber exec <my-parameter-store> -- <command>
+```
 
 ## Uploading new files to the AWS bucket
 ### 1. list files in the bucket

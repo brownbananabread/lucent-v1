@@ -20,17 +20,23 @@ class BaseModel(ABC):
         """gets the results to be displayed in the UI"""
         pass
 
-def model_factory(model_type: str) -> BaseModel:
+def model_factory(model_type: str, config: dict = None) -> BaseModel:
     """model_factory creates the correct Model Object using model type"""
     model = None
 
     if model_type == "genetic_algorithm":
         from .models.deap import EvolutionaryModel
-        model = EvolutionaryModel()
+        if config:
+            model = EvolutionaryModel(**config)
+        else:
+            model = EvolutionaryModel()
 
     if model_type == "clustering_algorithm":
         from .models.sklearn import ClusteringModel
-        model = ClusteringModel()
+        if config:
+            model = ClusteringModel(config)
+        else:
+            model = ClusteringModel()
 
     if model_type == "linear_model":
         from .models.pytorch import LearnToRankModel

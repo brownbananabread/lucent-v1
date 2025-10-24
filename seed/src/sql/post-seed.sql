@@ -36,7 +36,12 @@ FROM data_clean.dim_spatial ds
 LEFT JOIN data_clean.dim_locations dl ON ds.mine_id = dl.mine_id
 LEFT JOIN data_clean.dim_identification di ON ds.mine_id = di.mine_id
 LEFT JOIN data_clean.dim_status dst ON ds.mine_id = dst.mine_id
-WHERE ds.mine_id IS NOT NULL;
+WHERE ds.mine_id IS NOT NULL
+    AND ds.latitude IS NOT NULL
+    AND ds.longitude IS NOT NULL
+    AND dl.country IS NOT NULL
+    AND dl.state IS NOT NULL
+    AND dst.status IS NOT NULL;
 
 -- Mine Summary View - Comprehensive view with all data including raw JSONB
 CREATE VIEW data_analytics.mine_summary AS
@@ -180,7 +185,15 @@ SELECT
 FROM data_clean.dim_spatial ds
 LEFT JOIN data_clean.fact_shafts fs ON ds.mine_id = fs.mine_id
 GROUP BY ds.mine_id, fs.no_shafts
-HAVING COALESCE(fs.no_shafts, COUNT(fs.shaft_id), 0) > 0;
+HAVING COALESCE(fs.no_shafts, COUNT(fs.shaft_id), 0) > 0
+    AND SUM(
+        CASE
+            WHEN fs.shaft_diameter IS NOT NULL AND fs.shaft_depth IS NOT NULL
+            THEN (2 * 3.14159 * (fs.shaft_diameter / 2) * fs.shaft_depth) +
+                 (2 * 3.14159 * POWER((fs.shaft_diameter / 2), 2))
+            ELSE NULL
+        END
+    ) IS NOT NULL;
 
 -- Site Specific Conditions View - Transportation accessibility features
 CREATE VIEW data_analytics.t2_site_specific_conditions AS
@@ -221,7 +234,13 @@ SELECT
 
 FROM data_clean.dim_spatial ds
 LEFT JOIN data_raw.s_api_google_places places ON ds.mine_id::text = places.mine_id
-WHERE ds.latitude IS NOT NULL AND ds.longitude IS NOT NULL;
+WHERE ds.latitude IS NOT NULL
+    AND ds.longitude IS NOT NULL
+    AND (
+        (places.nearest_train_station IS NOT NULL AND jsonb_path_exists(places.nearest_train_station, '$.location'))
+        OR
+        (places.nearest_airport IS NOT NULL AND jsonb_path_exists(places.nearest_airport, '$.location'))
+    );
 
 -- Grid Integration View - Solar energy infrastructure analysis with state-level data
 CREATE VIEW data_analytics.t3_grid_integration AS

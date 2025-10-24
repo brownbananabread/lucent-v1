@@ -24,6 +24,75 @@ def display_menu():
     print("="*60)
 
 
+def get_deap_config():
+    """Prompt user for DEAP configuration parameters."""
+    print("\n" + "-"*60)
+    print("DEAP Configuration (press Enter for defaults)")
+    print("-"*60)
+
+    config = {}
+
+    try:
+        population_size = input("Population size [50]: ").strip()
+        config['population_size'] = int(population_size) if population_size else 50
+
+        generations = input("Generations [20]: ").strip()
+        config['generations'] = int(generations) if generations else 20
+
+        crossover_prob = input("Crossover probability [0.7]: ").strip()
+        config['crossover_prob'] = float(crossover_prob) if crossover_prob else 0.7
+
+        mutation_prob = input("Mutation probability [0.3]: ").strip()
+        config['mutation_prob'] = float(mutation_prob) if mutation_prob else 0.3
+
+        tournament_size = input("Tournament size [3]: ").strip()
+        config['tournament_size'] = int(tournament_size) if tournament_size else 3
+
+        individual_size = input("Individual size [50]: ").strip()
+        config['individual_size'] = int(individual_size) if individual_size else 50
+
+        diversity_threshold = input("Diversity threshold [25]: ").strip()
+        config['diversity_threshold'] = int(diversity_threshold) if diversity_threshold else 25
+
+        print("-"*60)
+        return config
+
+    except ValueError as e:
+        print(f"Invalid input: {e}. Using default values.")
+        return {
+            'population_size': 50,
+            'generations': 20,
+            'crossover_prob': 0.7,
+            'mutation_prob': 0.3,
+            'tournament_size': 3,
+            'individual_size': 50,
+            'diversity_threshold': 25
+        }
+
+
+def get_clustering_config():
+    """Prompt user for Clustering configuration parameters."""
+    print("\n" + "-"*60)
+    print("Clustering Configuration (press Enter for defaults)")
+    print("-"*60)
+
+    config = {}
+
+    try:
+        n_clusters = input("Number of clusters (leave empty for auto-detect): ").strip()
+        if n_clusters:
+            config['n_clusters'] = int(n_clusters)
+        else:
+            config['n_clusters'] = None  # Auto-detect
+
+        print("-"*60)
+        return config
+
+    except ValueError as e:
+        print(f"Invalid input: {e}. Using auto-detect.")
+        return {'n_clusters': None}
+
+
 def run_model(model: BaseModel, model_name: str):
     """Run the selected model and display progress."""
     print(f"\nRunning {model_name}...")
@@ -81,12 +150,14 @@ def main():
 
             if choice == '1':
                 print(f"\nCreating Genetic Algorithm model...")
-                model = model_factory("genetic_algorithm")
+                config = get_deap_config()
+                model = model_factory("genetic_algorithm", config=config)
                 run_model(model, "Genetic Algorithm")
 
             elif choice == '2':
                 print(f"\nCreating Clustering model...")
-                model = model_factory("clustering_algorithm")
+                config = get_clustering_config()
+                model = model_factory("clustering_algorithm", config=config)
                 run_model(model, "Clustering Algorithm")
 
             elif choice == '3':

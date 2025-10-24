@@ -95,9 +95,15 @@ resources:
       include_resource: true
       configuration:
         query: >-
-          SELECT mine_id, latitude, longitude, created_at, updated_at 
-          FROM data_clean.dim_spatial 
-          WHERE mine_id IN (SELECT mine_id FROM data_clean.dim_raw LIMIT 10)
+          SELECT i.mine_id, sp.latitude, sp.longitude
+          FROM data_clean.dim_identification i
+          JOIN data_clean.dim_locations l ON i.mine_id = l.mine_id
+          JOIN data_clean.dim_status s ON i.mine_id = s.mine_id
+          JOIN data_clean.dim_spatial sp ON i.mine_id = sp.mine_id
+          WHERE lower(l.country) = 'australia'
+          AND s.status IS NOT NULL
+          AND lower(s.status) <> 'operating'
+          ORDER BY i.primary_name
 
   databases:
     - title: Production Database
