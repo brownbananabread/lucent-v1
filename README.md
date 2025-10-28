@@ -192,11 +192,69 @@ The application follows a modern full-stack architecture:
 
 ## Environment Configuration
 
-The application uses AWS Secrets Manager to securely fetch API keys. Ensure your AWS profile has access to the `lucent-secrets` secret containing:
+This project **does not use `.env` files**. Instead, we follow a more robust convention to prevent stale configuration files:
 
-- `OPENAI_API_KEY` - For AI/ML integrations
-- `GOOGLE_MAPS_API_KEY` - For server-side mapping features  
-- `VITE_GOOGLE_MAPS_API_KEY` - For client-side mapping features
+- **Secrets** are stored in AWS Systems Manager Parameter Store
+- **Variables** are exported in the [Makefile](Makefile)
+- **Credential management** uses `aws-vault` with the `lucent-admin` profile
+- **Secret injection** uses `chamber` to surface Parameter Store values at runtime
+
+### Initial Setup
+
+#### 1. Create AWS Access Keys
+
+1. Navigate to the AWS Console: **IAM > Security Credentials**
+2. Click **Create access key**
+3. Save the Access Key ID and Secret Access Key
+
+#### 2. Configure aws-vault Profile
+
+Add the credentials to aws-vault with the profile name `lucent-admin`:
+
+```bash
+aws-vault add lucent-admin
+```
+
+Enter the Access Key ID and Secret Access Key when prompted.
+
+#### 3. Install Chamber
+
+Chamber is used to inject secrets from AWS Parameter Store into your environment:
+
+**macOS:**
+```bash
+brew install chamber
+```
+
+**Linux:**
+```bash
+wget https://github.com/segmentio/chamber/releases/latest/download/chamber-linux-amd64 -O chamber
+chmod +x chamber
+sudo mv chamber /usr/local/bin/
+```
+
+#### 4. Create Parameter Store Secrets
+
+In the AWS Console, navigate to **AWS Systems Manager > Parameter Store** and create the following parameters:
+
+- `/lucent/google_maps_api_key` - For Google Maps integration
+- `/lucent/google_places_v2_api_key` - For Google Places API v2
+- `/lucent/openai_api_key` - For OpenAI/AI integrations
+
+The service name prefix is `lucent`, which chamber uses to fetch all parameters under `/lucent/*`.
+
+### How It Works
+
+When you run commands like `make up`, `make api`, or `make web`, the Makefile automatically:
+
+1. Uses `chamber exec lucent` to load all `/lucent/*` parameters as environment variables
+2. Exports additional configuration variables defined in the Makefile (ports, database settings, etc.)
+3. Passes these variables to the application at runtime
+
+This approach ensures:
+- Secrets are never committed to version control
+- Configuration stays in sync across the team
+- No stale `.env` files lingering in your working directory
 
 ## Troubleshooting
 
