@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/brownbananabread/lucent-v1/compare/v1.0.2...v1.0.3) (2025-10-28)
+
+
+### Bug Fixes
+
+* **README.md:** Updated docs to include credentials and env variable setup ([782cbda](https://github.com/brownbananabread/lucent-v1/commit/782cbdaaf025fd1ffceca0da86f1c6f15ce89535))
+
 ### [1.0.2](https://github.com/brownbananabread/lucent-v1/compare/v1.0.1...v1.0.2) (2025-10-22)
 
 
