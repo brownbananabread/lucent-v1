@@ -101,68 +101,6 @@ const PipelineStepComponent = ({ step, isLast }: { step: PipelineStep; isLast: b
   </div>
 )
 
-const GanttChart = ({ steps }: { steps: PipelineStep[] }) => {
-  const calculatePositions = () => {
-    let cumulativeSeconds = 0
-    const positions = steps.map((step) => {
-      const match = step.duration?.match(/(\d+)m\s*(\d+)s/)
-      const stepDuration = match ? parseInt(match[1]) * 60 + parseInt(match[2]) : 0
-      const startSeconds = cumulativeSeconds
-      cumulativeSeconds += stepDuration
-      return { startSeconds, duration: stepDuration, step }
-    })
-    return { positions, totalSeconds: cumulativeSeconds }
-  }
-
-  const { positions, totalSeconds } = calculatePositions()
-
-  return (
-    <div className="bg-white dark:bg-white/[0.03] rounded-lg border border-gray-200 dark:border-white/[0.05] p-6">
-      <div className="space-y-4">
-        <div className="flex items-center gap-4 pb-2 border-b border-gray-200 dark:border-gray-700">
-          <div className="w-6"></div>
-          <div className="w-48 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Task name</div>
-          <div className="flex-1 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Timeline</div>
-          <div className="w-16 text-xs font-medium text-gray-500 dark:text-gray-400 uppercase">Duration</div>
-        </div>
-        {steps.map((step, index) => {
-          const position = positions[index]
-          const startPercent = totalSeconds > 0 ? (position.startSeconds / totalSeconds) * 100 : 0
-          const widthPercent = totalSeconds > 0 ? (position.duration / totalSeconds) * 100 : 0
-          const isLast = index === steps.length - 1
-          
-          return (
-            <div key={index} className="relative">
-              <div className="flex items-center gap-4">
-                <div className="flex flex-col items-center w-6">
-                  <div className="flex items-center justify-center">
-                    {getStatusIcon(step.status)}
-                  </div>
-                  {!isLast && <div className="w-px h-6 bg-gray-300 dark:bg-gray-600 mt-1" />}
-                </div>
-                <div className="w-48">
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">{step.name}</div>
-                </div>
-                <div className="flex-1 relative h-6">
-                  <div className="absolute inset-0 bg-gray-50 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="absolute top-0 bottom-0 w-px bg-gray-200 dark:bg-gray-600" style={{ left: `${(i + 1) * 20}%` }} />
-                    ))}
-                  </div>
-                  {position.duration > 0 && (
-                    <div className={`absolute top-1 bottom-1 ${getStatusColor(step.status).includes('green') ? 'bg-blue-500' : step.status === 'failed' ? 'bg-red-500' : step.status === 'running' ? 'bg-blue-500 animate-pulse' : 'bg-gray-400'} rounded-sm`}
-                         style={{ left: `${startPercent}%`, width: `${Math.max(widthPercent, 2)}%` }} />
-                  )}
-                </div>
-                <div className="w-16 text-xs text-gray-500 dark:text-gray-400 text-right">{step.duration || '--'}</div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
 
 const DataTable = ({
   rows,
@@ -599,11 +537,18 @@ export default function Job() {
   }
   
   const pipelineSteps: PipelineStep[] = [
-    { name: 'Extract data from S3 bucket', status: 'passed', duration: '2m 30s', startTime: '14:30:00' },
-    { name: 'Clean', status: 'passed', duration: '1m 45s', startTime: '14:32:30' },
-    { name: 'Process', status: 'passed', duration: '3m 15s', startTime: '14:34:15' },
-    { name: 'Normalise', status: 'passed', duration: '2m 20s', startTime: '14:37:30' },
-    { name: 'Load into PostgreSQL', status: 'passed', duration: '1m 50s', startTime: '14:39:50' }
+    { name: 'Initialize database', status: 'passed', duration: '0m 1s', startTime: '22:51:28' },
+    { name: 'Load base layers (Excel files)', status: 'passed', duration: '0m 2s', startTime: '22:51:29' },
+    { name: 'Load satellite data', status: 'passed', duration: '0m 1s', startTime: '22:51:31' },
+    { name: 'Extract and normalize location', status: 'passed', duration: '0m 1s', startTime: '22:51:32' },
+    { name: 'Extract company and ownership', status: 'passed', duration: '0m 1s', startTime: '22:51:33' },
+    { name: 'Extract commodities', status: 'passed', duration: '0m 1s', startTime: '22:51:34' },
+    { name: 'Extract status information', status: 'passed', duration: '0m 1s', startTime: '22:51:35' },
+    { name: 'Extract shaft details', status: 'passed', duration: '0m 1s', startTime: '22:51:36' },
+    { name: 'Execute custom scripts (Google Places API)', status: 'passed', duration: '0m 1s', startTime: '22:51:36' },
+    { name: 'Create analytics views with post-seed.sql', status: 'passed', duration: '0m 0s', startTime: '22:51:37' },
+    { name: 'Commit logs to database', status: 'passed', duration: '0m 0s', startTime: '22:51:37' },
+    { name: 'Execute embeddings pipeline', status: 'passed', duration: '0m 8s', startTime: '22:51:37' }
   ]
 
   const fetchDataForTable = async (tableName: string, tableType: 'duplicate' | 'excluded', isLoadMore = false) => {
@@ -708,7 +653,7 @@ export default function Job() {
       try {
         const response = await fetchRequest({
           method: 'GET',
-          url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs?limit=100'
+          url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs'
         })
         if (response?.status >= 200 && response.status < 300) {
           const fetchedLogs = response.body?.data || []
@@ -747,7 +692,7 @@ export default function Job() {
     try {
       const response = await fetchRequest({
         method: 'GET',
-        url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs?limit=100'
+        url: 'http://localhost:5174/api/v1/schemas/public/tables/pipeline_logs'
       })
       if (response?.status >= 200 && response.status < 300) {
         const fetchedLogs = response.body?.data || []
@@ -941,7 +886,6 @@ export default function Job() {
 
   const tabs = [
     { id: 'overview' as const, label: 'Overview' },
-    { id: 'steps' as const, label: 'Steps' },
     { id: 'excluded-rows' as const, label: 'Excluded Rows' },
     { id: 'duplicate-rows' as const, label: 'Duplicate Rows' },
     { id: 'integrations' as const, label: 'Integrations' }
@@ -974,16 +918,6 @@ export default function Job() {
           }
           showRefresh={true}
           onRefresh={handleRefresh}
-          badge={(() => {
-            const pipelineStatus = getPipelineStatus(logs)
-            return (
-              <span
-                className={`px-2 py-1 rounded-md text-xs font-medium ${pipelineStatus.className}`}
-              >
-                {logsLoading ? 'Loading...' : pipelineStatus.status.charAt(0).toUpperCase() + pipelineStatus.status.slice(1)}
-              </span>
-            )
-          })()}
           breadcrumbs={[{ label: 'ETL Pipelines', url: '/etl-pipeline/workflows' }, { label: 'Excel S3 Data Ingestion Pipeline'}]}
         />
         
@@ -1014,20 +948,11 @@ export default function Job() {
               <div className="space-y-3 h-full flex flex-col">
                 <div className="h-full flex flex-col">
                   <div className="flex-1 overflow-y-auto">
-                    <div>{pipelineSteps.map((step, index) => (
-                      <PipelineStepComponent key={index} step={step} isLast={index === pipelineSteps.length - 1} />
-                    ))}</div>
-                  </div>
-                </div>
-              </div>
-            )}
-
-
-            {activeTab === 'steps' && (
-              <div className="space-y-3 h-full flex flex-col">
-                <div className="h-full flex flex-col">
-                  <div className="flex-1 overflow-y-auto">
-                    <GanttChart steps={pipelineSteps} />
+                    <div className="bg-white dark:bg-white/[0.03] rounded-lg border border-gray-200 dark:border-white/[0.05] p-6">
+                      {pipelineSteps.map((step, index) => (
+                        <PipelineStepComponent key={index} step={step} isLast={index === pipelineSteps.length - 1} />
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

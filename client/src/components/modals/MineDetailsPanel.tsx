@@ -689,18 +689,81 @@ export function MineDetailsPanel({ isOpen, onClose, mine_id }: MineDetailsPanelP
                   Mine Images <span className="bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 px-2 py-1 rounded-full text-sm font-medium">(2)</span>
                 </h2>
                 <div className="bg-white dark:bg-white/[0.03] border border-gray-200 dark:border-white/[0.05] rounded-lg p-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {['Aerial View', 'Mine Entrance'].map(title => (
-                      <div key={title} className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
-                        <div className="text-center text-gray-500 dark:text-gray-400">
-                          <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <p className="text-sm">{title}</p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                  {details?.data?.latitude && details?.data?.longitude ? (
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { title: 'Satellite View', maptype: 'satellite', zoom: 15 },
+                        { title: 'Terrain View', maptype: 'terrain', zoom: 13 }
+                      ].map(({ title, maptype, zoom }) => {
+                        const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY || import.meta.env.GOOGLE_MAPS_API_KEY;
+                        const lat = details.data.latitude;
+                        const lng = details.data.longitude;
+
+                        // Check if API key is available
+                        if (!apiKey) {
+                          console.error('Google Maps API key is not configured');
+                          return (
+                            <div key={title} className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center">
+                              <div className="text-center text-gray-500 dark:text-gray-400 p-4">
+                                <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                                </svg>
+                                <p className="text-sm">API Key Missing</p>
+                              </div>
+                            </div>
+                          );
+                        }
+
+                        const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${lat},${lng}&zoom=${zoom}&size=600x400&maptype=${maptype}&markers=color:red%7C${lat},${lng}&key=${apiKey}`;
+
+                        return (
+                          <div key={title} className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg overflow-hidden relative group">
+                            <img
+                              src={mapUrl}
+                              alt={title}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                console.error(`Failed to load ${title} from Google Maps Static API`, {
+                                  maptype,
+                                  zoom,
+                                  lat,
+                                  lng,
+                                  hasApiKey: !!apiKey
+                                });
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const parent = target.parentElement;
+                                if (parent) {
+                                  parent.innerHTML = `
+                                    <div class="w-full h-full flex items-center justify-center text-center text-gray-500 dark:text-gray-400">
+                                      <div>
+                                        <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                        <p class="text-sm">${title}</p>
+                                        <p class="text-xs mt-1">Failed to load</p>
+                                      </div>
+                                    </div>
+                                  `;
+                                }
+                              }}
+                              onLoad={() => {
+                                console.log(`Successfully loaded ${title}`);
+                              }}
+                            />
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                              <p className="text-white text-sm font-medium">{title}</p>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <div className="text-center py-8">
+                      <MapPin className="w-12 h-12 mx-auto mb-3 text-gray-400 dark:text-gray-500" />
+                      <p className="text-gray-500 dark:text-gray-400 text-sm">Location coordinates not available</p>
+                    </div>
+                  )}
                 </div>
               </div>
 

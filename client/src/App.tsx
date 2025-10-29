@@ -6,7 +6,6 @@ import { MineDetailsProvider } from "./contexts/MineDetailsContext";
 
 import NotFound from "./pages/404";
 import Auth from "./pages/Auth";
-import Dashboard from "./pages/Dashboard";
 import Search from "./pages/Search";
 import LibraryPage from "./pages/Library";
 import Maps from "./pages/Maps"
@@ -26,8 +25,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Navigate to="/auth" />} />
             <Route path="/auth" element={<Auth />} />
-            <Route element={<DashboardLayout />}> 
-              <Route path="/dashboard" element={<Dashboard />} />
+            <Route element={<DashboardLayout />}>
+              <Route path="/dashboard" element={<Navigate to="/search" replace />} />
               <Route path="/search" element={<Search />} />
               <Route path="/library" element={<LibraryPage />} />
               <Route path="/library/:schema/:table" element={<LibraryPage />} />

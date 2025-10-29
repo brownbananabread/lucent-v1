@@ -5,7 +5,6 @@ import {
   ClipboardList, Brain, FolderOpen,
   User, Sun, Moon,
   MapPin,
-  Home,
   TextSearch,
   // Unplug,
   ShoppingCart
@@ -19,7 +18,6 @@ const navigation = [
   {
     title: "",
     items: [
-      { name: "Dashboard (UI)", icon: <Home size={18} />, path: "/dashboard" },
       { name: "Search", icon: <Search size={18} />, path: "/search" },
     ]
   },
