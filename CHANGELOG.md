@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/brownbananabread/lucent-v1/compare/v1.0.3...v1.1.0) (2025-10-29)
+
+
+### Features
+
+* Removed dashboard, added images, fixed workflows and bot ([b9a524a](https://github.com/brownbananabread/lucent-v1/commit/b9a524adc40125bf163d3b895809e5b3ee023e05))
+
 ### [1.0.3](https://github.com/brownbananabread/lucent-v1/compare/v1.0.2...v1.0.3) (2025-10-28)
 
 
