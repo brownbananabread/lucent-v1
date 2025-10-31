@@ -11,7 +11,7 @@ interface Model{
 
 const Models = () => {
   
-  const dummyModels = [
+  const avaliableModels = [
     {
       id: 1,
       name: "DEAP Evolutionary Model",
@@ -28,14 +28,14 @@ const Models = () => {
     },
     {
       id: 3,
-      name: "Context Aware Neural Network",
-      type: "RNN",
+      name: "Linear Neural Network",
+      type: "NN",
       description:
-        "A neural network that analyses shafts with surrounding shaft information to create ranking",
+        "A neural network that analyses shafts to create ranking",
     }
   ];
 
-  const [selectedModelId, setSelectedModelId] = useState<number>(dummyModels[0].id);
+  const [selectedModelId, setSelectedModelId] = useState<number>(avaliableModels[0].id);
   const [models, setModels] = useState<Model[]>([]);
   const [runResults, setRunResults] = useState<any>(null);
 
@@ -51,7 +51,7 @@ const Models = () => {
         setSelectedModelId(data[0]?.id || null); // Set the first model as selected if available
       } catch (error) {
         console.error("Error fecthing models:", error);
-        setModels(dummyModels)
+        setModels(avaliableModels)
         setSelectedModelId(models[0]?.id);
       } 
   };

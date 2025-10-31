@@ -12,13 +12,14 @@ LOGGER = setup()
 
 DEFAULT_CONFIG = {
         "comparison_source": "data_clean.pairwise_comparisons",
-        "data_source": "data_analytics.mine_summary",
+        "data_source": "data_analytics.shaft_summary",
         "numerical_features": [
-            "t1_no_shafts",
-            "t1_avg_depth_m",
-            "t1_avg_diameter_m",
-            "t1_total_shaft_volume",
-            "t3_has_grid_connection"
+            "depth",
+            "depth_reported",
+            "diameter",
+            "diameter_reported",
+            "grid_connection",
+            "grid_connection_reported"
         ],
         "catagorical_features": [],
         "parameters": {
