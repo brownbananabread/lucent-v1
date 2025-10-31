@@ -3,6 +3,7 @@ import pandas as pd
 from src.utils.database import get_connection
 from src.utils.logging import setup
 from src.ml import helpers
+import json
 
 logger = setup()
 
@@ -92,3 +93,22 @@ LEFT JOIN data_analytics.t5_investment_analysis t5 ON t0.mine_id = t5.mine_id
 WHERE t0.mine_id IS NOT NULL
 ORDER BY t0.mine_id
 """
+
+
+def save_ml_results(model_name: str, results: dict):
+    try:
+
+        query = """
+            INSERT INTO public.model_results (ml_name, results)
+            VALUES (%s, %s);
+        """
+
+        with get_connection() as conn:
+            with conn.cursor() as cursor:
+                # Get rows
+                cursor.execute(query, [model_name, json.dumps(results)])
+
+        logger.info(f"Saved results to public.model_results")
+
+    except Exception as e:
+        logger.error(f"Error saving results: {e}")

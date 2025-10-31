@@ -293,3 +293,34 @@ FROM data_clean.dim_spatial ds
 LEFT JOIN data_clean.dim_evaluations dev ON ds.mine_id = dev.mine_id
 LEFT JOIN data_clean.dim_identification di ON ds.mine_id = di.mine_id;
 
+
+
+-- Shaft Summary View - view for analysing shafts
+CREATE VIEW data_analytics.shaft_summary AS
+SELECT 
+   fs.shaft_id,
+   fs.mine_id,
+   ds.latitude,
+   ds.longitude,
+
+   fs.shaft_depth as depth,
+   CASE
+    WHEN fs.shaft_depth IS NULL THEN 0 ELSE 1
+   END as depth_reported,
+
+   fs.shaft_diameter as diameter,
+   CASE
+    WHEN fs.shaft_diameter IS NULL THEN 0 ELSE 1
+   END as diameter_reported,
+
+   de.grid_connection,
+   CASE 
+    WHEN de.grid_connection IS NULL THEN 0 ELSE 1
+   END as grid_connection_reported
+
+FROM data_clean.fact_shafts fs
+LEFT JOIN data_clean.dim_spatial ds ON fs.mine_id = ds.mine_id
+LEFT JOIN data_clean.dim_energy de ON fs.mine_id = de.mine_id
+WHERE ds.latitude IS NOT NULL
+  AND ds.longitude IS NOT NULL;
+

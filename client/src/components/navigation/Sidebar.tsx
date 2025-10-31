@@ -7,7 +7,8 @@ import {
   MapPin,
   TextSearch,
   // Unplug,
-  ShoppingCart
+  ShoppingCart,
+  ListChecks
 } from "lucide-react";
 import { useSidebar } from "../../contexts/SidebarContext";
 import { useTheme } from "../../contexts/ThemeContext";
@@ -47,6 +48,7 @@ const navigation = [
     items: [
       { name: "Feature Store", icon: <ShoppingCart size={18} />, path: "/ml-studio/feature-store" },
       { name: "Models", icon: <Brain size={18} />, path: "/ml-studio/models" },
+      { name: "Make Comparison", icon: <ListChecks size={18} />, path: "/ml-studio/make-comparisons" },
     ]
   },
 ];
