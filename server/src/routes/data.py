@@ -639,3 +639,131 @@ def get_spatial_mine(mine_id):
 
     except Exception as e:
         return jsonify({"message": f"Failed to get spatial mine: {str(e)}"}), 400
+    
+
+@bp.route('schemas/<schema_name>/tables/<table_name>/nearby', methods=['GET'])
+def get_nearby_locations(schema_name, table_name):
+    """Get nearby locations within a specified radius from given latitude and longitude."""
+    try:
+        
+        # Get required parameters
+        latitude = request.args.get('latitude', type=float)
+        longitude = request.args.get('longitude', type=float)
+        radius_m = request.args.get('radius_m', type=float)
+        
+        if latitude is None or longitude is None or radius_m is None:
+            return jsonify({"message": "latitude, longitude, and radius_m are required parameters"}), 400
+        
+        # Get optional parameters
+        include_columns = request.args.get('include_columns')
+        if include_columns:
+            columns = ', '.join([f'"{col}"' for col in include_columns])
+        else:
+            columns = '*'
+        
+        limit = request.args.get('limit', type=int, default=50)
+        offset = request.args.get('offset', type=int, default=0)
+
+        # Build SELECT clause
+
+        ensure_postgis = "CREATE EXTENSION IF NOT EXISTS postgis;"
+
+        query = f"""
+                SELECT grid_connection, depth, diameter, longitude, latitude FROM "{schema_name}"."{table_name}"
+                WHERE ST_DWithin(
+                    ST_SetSRID(ST_MakePoint(longitude, latitude), 4326)::geography,
+                    ST_SetSRID(ST_MakePoint(%s, %s), 4326)::geography,
+                    %s
+                );
+        """
+        params = (longitude, latitude, radius_m)
+
+        with get_connection() as conn:
+                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    cursor.execute(ensure_postgis)
+                    cursor.execute(query, params)
+                    rows = cursor.fetchall()
+                    result_data = [dict(row) for row in rows]
+
+                    return {
+                        "data": result_data,
+                        "limit": limit,
+                        "offset": offset,
+                        "returned_rows": len(result_data),
+                    }
+        
+        result = service.get_nearby_locations(schema_name, table_name, latitude, longitude, radius_m, include_columns, limit, offset)
+        return jsonify(result), 200
+        
+    except Exception as e:
+        return jsonify({"message": f"Failed to get nearby locations: {str(e)}"}), 400
+    
+@bp.route('/schemas/<schema_name>/tables/<table_name>/rows', methods=['GET'])
+def query_random_rows(schema_name, table_name):
+    """Query multiple rows from a specific table."""
+    try:
+        # Get query parameters
+        include_columns = request.args.get('include_columns')
+        limit = request.args.get('limit', type=int, default=50)
+        offset = request.args.get('offset', type=int, default=0)
+        random = request.args.get('random', default='false').lower() == 'true'
+        
+        # Parse include_columns
+        if include_columns:
+            columns = [col.strip() for col in include_columns.split(',') if col.strip()]
+        else:
+            columns = '*'
+
+        # Build main query
+            query = f'SELECT {columns} FROM "{schema_name}"."{table_name}"'
+            if random:
+                query += ' ORDER BY RANDOM()'
+            if limit:
+                query += f' LIMIT {limit}'
+            if offset > 0:
+                query += f' OFFSET {offset}'
+
+        with get_connection() as conn:
+            with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                # Get rows
+                cursor.execute(query)
+                rows = cursor.fetchall()
+                result_data = [dict(row) for row in rows]
+
+                result = {
+                    "data": result_data,
+                    "limit": limit,
+                    "offset": offset,
+                    "returned_rows": len(result_data),
+                }
+        return jsonify(result), 200
+        
+    except Exception as e:
+
+        return jsonify({"message": f"Failed to query random rows: {str(e)}"}), 400
+
+# Route 7: Insert a new row
+@bp.route('/schemas/<schema_name>/tables/<table_name>/insert', methods=['POST'])
+def insert_row(schema_name, table_name):
+    """Insert a new row into a specific table."""
+    try:
+        # Get the data from the request body
+        data = request.get_json()
+        if not data:
+            return jsonify({"message": "No data provided"}), 400
+
+        # Build the INSERT query
+        columns = ', '.join([f'"{col}"' for col in data.keys()])
+        placeholders = ', '.join(['%s'] * len(data))
+        query = f'INSERT INTO "{schema_name}"."{table_name}" ({columns}) VALUES ({placeholders})'
+
+        # Execute the query
+        with get_connection() as conn:
+            with conn.cursor() as cursor:
+                cursor.execute(query, list(data.values()))
+                conn.commit()
+
+        return jsonify({"message": "Row inserted successfully"}), 201
+
+    except Exception as e:
+        return jsonify({"message": f"Failed to insert row: {str(e)}"}), 400

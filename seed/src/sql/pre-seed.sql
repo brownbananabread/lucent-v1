@@ -184,8 +184,8 @@ CREATE TABLE data_clean.fact_pairwise_comparisons (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     w_id UUID,
     l_id UUID,
-    FOREIGN KEY (w_id) REFERENCES data_clean.dim_spatial(mine_id),
-    FOREIGN KEY (l_id) REFERENCES data_clean.dim_spatial(mine_id),
+    FOREIGN KEY (w_id) REFERENCES data_clean.fact_shafts(shaft_id),
+    FOREIGN KEY (l_id) REFERENCES data_clean.fact_shafts(shaft_id),
     CONSTRAINT ids_not_equal CHECK (w_id <> l_id)
 );
 

@@ -196,6 +196,8 @@ class LearnToRankModel(BaseModel):
         """trains the model and yields to stream steps to the UI"""
         optimiser = torch.optim.Adam(self.model.parameters(), lr=0.001)
 
+        return
+
         total_epochs = self.parameters['epochs']
         for epoch in range(total_epochs):
             total_loss = 0
@@ -239,7 +241,7 @@ class LearnToRankModel(BaseModel):
         """saves the model to the database"""
         pass
 
-    def get_results(self):
+    def get_results(self) -> dict:
         return self.mines_data.to_dict()
 
 

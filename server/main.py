@@ -2,7 +2,7 @@ import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 
-from src.routes import data, assistant
+from src.routes import data, assistant, model
 
 SERVER_PORT = int(os.getenv("SERVER_PORT", 5174))
 
@@ -16,6 +16,7 @@ CORS(app,
 # Register blueprints
 app.register_blueprint(data.bp)
 app.register_blueprint(assistant.bp)
+app.register_blueprint(model.bp)
 
 @app.route('/')
 def home():

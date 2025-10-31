@@ -14,6 +14,7 @@ import PipelinePage from "./pages/Workflows"
 import Board from "./pages/Board";
 import ModelsPage from "./pages/Models";
 import FeatureStorePage from "./pages/FeatureStore";
+import MakeComparisons from "./pages/MakeComparisons";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
               <Route path="/visualisation/evaluation-board" element={<Board />} />
               <Route path="/ml-studio/feature-store" element={<FeatureStorePage />} />
               <Route path="/ml-studio/models" element={<ModelsPage />} />
+              <Route path="/ml-studio/make-comparisons" element={<MakeComparisons />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

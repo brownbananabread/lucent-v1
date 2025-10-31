@@ -1,6 +1,8 @@
 services:
   database:
-    image: pgvector/pgvector:pg17
+    build: 
+      context: .
+      dockerfile: Dockerfile.postgres
     container_name: lucent-db
     environment:
       - POSTGRES_DB=${DB_NAME}

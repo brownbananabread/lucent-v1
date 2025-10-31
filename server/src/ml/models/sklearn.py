@@ -65,10 +65,6 @@ class ClusteringModel(BaseModel):
         print("\nPlease specify features to cluster on (comma-separated):")
         print(f"Default: {', '.join(self.config['features'])}")
 
-        features_input = input("Enter features (or press Enter for default): ").strip()
-        if features_input:
-            self.config['features'] = [f.strip() for f in features_input.split(',')]
-
         self.features = self.config['features']
         self.parameters = self.config['parameters']
         self.df = None

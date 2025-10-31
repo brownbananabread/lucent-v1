@@ -516,7 +516,7 @@ export default function Job() {
   }
 
   // Function to determine pipeline status based on log levels
-  const getPipelineStatus = (logs: LogEntry[]): { status: string; className: string } => {
+  /*const getPipelineStatus = (logs: LogEntry[]): { status: string; className: string } => {
     if (logs.length === 0) {
       return { status: 'pending', className: 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200' }
     }
@@ -534,7 +534,7 @@ export default function Job() {
 
     // All logs are INFO level
     return { status: 'completed', className: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' }
-  }
+  }*/
   
   const pipelineSteps: PipelineStep[] = [
     { name: 'Initialize database', status: 'passed', duration: '0m 1s', startTime: '22:51:28' },
